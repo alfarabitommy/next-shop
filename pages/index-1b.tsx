@@ -1,17 +1,18 @@
-// Option 1 : fetch products on the server side (in getStaticProps)
+// Option 1b : fetch products on the server side 
+// But with incremental Static Regeneration (in getStaticProps)
+
 import Head from "next/head";
 import Title from "../components/Title";
 import { getProducts } from "../lib/products";
 
-const products = [
-  { id: 1, title: 'First Product' },
-  { id: 2, title: 'Second Product' }
-]
-
 export async function getStaticProps() {
   console.log('[HomePage] getStaticProps()');
   const products = await getProducts();
-  return { props: { products }};
+  return { 
+    props: { products },
+    // parameter dibawah menggunakan incremental static regeneration
+    revalidate: 30 // in seconds
+  };
 }
 
 function HomePage({ products }) {
