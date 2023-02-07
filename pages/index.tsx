@@ -10,7 +10,7 @@ export async function getStaticProps() {
   return { 
     props: { products },
     // parameter dibawah menggunakan incremental static regeneration
-    revalidate: 5 * 60 // in seconds
+    revalidate: 30 // in seconds
   };
 }
 
