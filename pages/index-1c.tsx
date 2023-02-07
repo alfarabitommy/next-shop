@@ -1,4 +1,6 @@
 // Option 1c : fetch products on the server side (in getServerSideProps)
+// disini data akan di fetch setiap kali request menuju page ini dijalankan
+// mirip seperti php, jadi server akan generate html baru di setiap requestnya
 import Head from "next/head";
 import Title from "../components/Title";
 import { getProducts } from "../lib/products";

@@ -1,6 +1,8 @@
 // Option 1b : fetch products on the server side 
 // But with incremental Static Regeneration (in getStaticProps)
-
+// 1b ini mirip dengan option 1a, namun dengan ISR (incremental static regeneration), halaman akan di regenerate secara
+// berkala agar data yg terbaru bisa ter-update, jadi ketika data di backend berubah, ini akan mengikuti perubahan data secara dinamis
+// kekurangannya adalah kita tidak bisa 'export' page ini secara static
 import Head from "next/head";
 import Title from "../components/Title";
 import { getProducts } from "../lib/products";
