@@ -9,8 +9,7 @@ export async function getStaticProps() {
   const products = await getProducts();
   return { 
     props: { products },
-    // parameter dibawah menggunakan incremental static regeneration
-    revalidate: 30 // in seconds
+    revalidate: 30,
   };
 }
 

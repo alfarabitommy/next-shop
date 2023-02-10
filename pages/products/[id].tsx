@@ -18,7 +18,7 @@ export async function getStaticProps({ params: { id } }) {
     const product = await getProduct(id);
     return {
         props: { product },
-        revalidate: 30 // in seconds
+        revalidate: 30,
     };
 }
 
