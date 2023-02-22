@@ -14,8 +14,9 @@ export class ApiError extends Error {
 
 // fetchJson disini digunakan untuk file lib/products.tsx
 // jadi tidak ada pengulangan code untuk parameter atau function yang sering dipanggil
-export async function fetchJson(url) {
-    const response = await fetch(url);
+// argument 'options' digunakan ketika kita akan login
+export async function fetchJson(url, options) {
+    const response = await fetch(url, options);
     if (!response.ok) {
         throw new Error(`request failed: ${response.status}`);
     }
